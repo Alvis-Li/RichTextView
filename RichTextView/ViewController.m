@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "RichTextView.h"
 @interface ViewController ()
 
 @end
@@ -16,6 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    RichTextView * richTextView = [[RichTextView alloc]initWithFrame:CGRectMake(100, 100, CGRectGetWidth(self.view.frame), 10)];
+    richTextView.text = @"dfjghdfkjghsl[大哭]5465456+768485[微笑]";
+    richTextView.backgroundColor = [UIColor clearColor];
+    CGRect rect = richTextView.frame;
+    rect.size = [richTextView draw];
+    richTextView.frame = rect;
+    [self.view addSubview: richTextView];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
